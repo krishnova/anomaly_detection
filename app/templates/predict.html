@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <!-- {{graphJSONif}} -->
+    <!-- {{graphJSONlof}} -->
+
+    <!-- <script src=”https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+
+    <div id="graph-0-IF"></div>
+
+    <div id="graph-0-LOF"></div>
+
+    <script type="text/javascript">
+      const graphs = {{graphJSONif | safe}};
+      const idsif = {{idsif | safe}};
+      for(let i in graphs) {
+          Plotly.plot(idsif[i],graphs[i].data, graphs[i].layout);
+      }
+
+      const graphslof = {{graphJSONlof | safe}};
+      const idslof = {{idslof | safe}};
+      console.log(idslof);
+      for(let i in graphslof) {
+          Plotly.plot(idslof[i],graphslof[i].data, graphslof[i].layout);
+      }
+    </script>
+  </body>
+</html>
