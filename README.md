@@ -1,5 +1,9 @@
 # Anomaly-Detection
-Repository for Anomaly Detection Project
+
+https://andet.herokuapp.com/
+
+
+https://detectanomalies.herokuapp.com/
 
 To run app, run command:
 python3 -m venv venv
